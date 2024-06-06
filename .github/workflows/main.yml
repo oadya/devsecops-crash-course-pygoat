@@ -1,9 +1,13 @@
 name: CI
 
-on: [push]
+on: 
+  workflow_dispatch:
+  [push]:
 
 jobs:
  sast_scan:
+   # Bandit is SAST tool for python to run static application security tests
+   # We can use multiple tools for the same job to compare the result
    name: Run Bandit Scan
    runs-on: ubuntu-latest
 
